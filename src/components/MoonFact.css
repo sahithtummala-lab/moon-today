@@ -1,0 +1,41 @@
+.moon-fact {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.moon-fact-card {
+  max-width: 900px;
+  width: 100%;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 2.5rem;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.35);
+}
+
+.moon-fact-label{
+  color:#9ecbff;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.8rem;
+  margin-bottom:.8rem;
+}
+
+.moon-fact h2{
+  margin-bottom:1rem;
+  font-size:2rem;
+}
+
+.moon-fact p{
+  color:#d8d8d8;
+  line-height:1.8;
+  font-size:1.05rem;
+}

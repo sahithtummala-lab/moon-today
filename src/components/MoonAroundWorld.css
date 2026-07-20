@@ -1,0 +1,49 @@
+.moon-world {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-label {
+  color: #9ecbff;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.culture-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.word {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 1.75rem;
+  backdrop-filter: blur(16px);
+}
+
+.word h3 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.word span {
+  display: block;
+  color: #9ecbff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.word p {
+  color: #d8d8d8;
+  line-height: 1.6;
+}
