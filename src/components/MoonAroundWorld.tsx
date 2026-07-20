@@ -1,36 +1,37 @@
-import "./MoonAroundWorld.css";
+import { moonLocations } from "../utils/moonLocations";
+import { getMoonData } from "../utils/moonData";
 
 export default function MoonAroundWorld() {
   return (
-    <section className="moon-world">
-      <div className="section-header">
-        <p className="section-label">Moon Around the World</p>
-        <h2>Featured Culture: Telugu</h2>
-        <p>
-          The Moon has inspired language, poetry, music, and traditions across
-          generations. Today we explore how it is celebrated in Telugu culture.
-        </p>
-      </div>
+    <section className="feature-card">
+      <h3>Moon Around the World</h3>
 
-      <div className="culture-card">
-        <div className="word">
-          <h3>చంద్రుడు</h3>
-          <span>Chandrudu</span>
-          <p>The formal Telugu word for the Moon.</p>
-        </div>
+      {moonLocations.map((location) => {
+        const moon = getMoonData(
+          new Date(),
+          location.latitude,
+          location.longitude
+        );
 
-        <div className="word">
-          <h3>జాబిల్లి</h3>
-          <span>Jabilli</span>
-          <p>A beloved poetic name often heard in songs and stories.</p>
-        </div>
+        return (
+          <div key={location.city}>
+            <p>
+              🌎 {location.city}, {location.country}
+            </p>
 
-        <div className="word">
-          <h3>చందమామ</h3>
-          <span>Chandamama</span>
-          <p>A warm, affectionate name commonly used with children.</p>
-        </div>
-      </div>
+            <p>
+              {moon.emoji} {moon.phaseName} ({moon.illumination}%)
+            </p>
+
+            <p>
+              Moonrise:{" "}
+              {moon.moonrise
+                ? moon.moonrise.toLocaleTimeString()
+                : "Not visible"}
+            </p>
+          </div>
+        );
+      })}
     </section>
   );
 }
