@@ -1,32 +1,35 @@
-import InfoRow from "./InfoRow";
-import { upcomingEvents } from "../data/events";
+import type { MoonData } from "../utils/moonData";
 
-interface QuickViewProps {
-  moon: {
-    age: number;
-  };
-}
+type QuickViewProps = {
+  moon: MoonData;
+};
 
-function QuickView({ moon }: QuickViewProps) {
+export default function QuickView({ moon }: QuickViewProps) {
   return (
-    <>
-      <h3>👁 Quick View</h3>
+    <div>
+      <h3>Quick View</h3>
 
-      {upcomingEvents.map((event) => (
-        <InfoRow
-          key={event.title}
-          label={`${event.icon} ${event.title}`}
-          value={event.date}
-        />
-      ))}
+      <p>
+        🌕 Illumination: {moon.illumination}%
+      </p>
 
-      <InfoRow
-        label="Lunar Cycle"
-        value={`Day ${moon.age.toFixed(1)} of 29.5`}
-        description="Days since the last New Moon."
-      />
-    </>
+      <p>
+        🌙 Age: {moon.age.toFixed(1)} days
+      </p>
+
+      <p>
+        ⬆️ Moonrise:{" "}
+        {moon.moonrise
+          ? moon.moonrise.toLocaleTimeString()
+          : "Not visible"}
+      </p>
+
+      <p>
+        ⬇️ Moonset:{" "}
+        {moon.moonset
+          ? moon.moonset.toLocaleTimeString()
+          : "Not visible"}
+      </p>
+    </div>
   );
 }
-
-export default QuickView;

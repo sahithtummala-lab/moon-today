@@ -1,61 +1,37 @@
-import useLocation from "../hooks/useLocation";
-import { getMoonSky } from "../utils/moonSky";
+import type { MoonData } from "../utils/moonData";
 
-function TonightSky() {
-  const { location, error } = useLocation();
+type TonightSkyProps = {
+  moon: MoonData;
+};
 
-  if (error) {
-    return (
-      <>
-        <h3>🌌 Tonight's Sky</h3>
-        <p>{error}</p>
-      </>
-    );
-  }
-
-  if (!location) {
-    return (
-      <>
-        <h3>🌌 Tonight's Sky</h3>
-        <p>Finding your location...</p>
-      </>
-    );
-  }
-
-  const sky = getMoonSky(
-    location.latitude,
-    location.longitude
-  );
-
+export default function TonightSky({ moon }: TonightSkyProps) {
   return (
-    <>
-      <h3>🌌 Tonight's Sky</h3>
+    <div>
+      <h3>Tonight's Sky</h3>
 
       <p>
-        🌙 Moonrise:{" "}
-        {sky.moonrise
-          ? sky.moonrise.toLocaleTimeString([], {
-              hour: "numeric",
-              minute: "2-digit",
-            })
-          : "Not visible today"}
+        🌙 Altitude:{" "}
+        {(moon.altitude * 180 / Math.PI).toFixed(1)}°
       </p>
 
       <p>
-        🌅 Moonset:{" "}
-        {sky.moonset
-          ? sky.moonset.toLocaleTimeString([], {
-              hour: "numeric",
-              minute: "2-digit",
-            })
-          : "Not visible today"}
+        🧭 Azimuth:{" "}
+        {(moon.azimuth * 180 / Math.PI).toFixed(1)}°
       </p>
 
       <p>
-        📍 Based on your location
+        ⬆️ Moonrise:{" "}
+        {moon.moonrise
+          ? moon.moonrise.toLocaleTimeString()
+          : "Not visible"}
       </p>
-    </>
+
+      <p>
+        ⬇️ Moonset:{" "}
+        {moon.moonset
+          ? moon.moonset.toLocaleTimeString()
+          : "Not visible"}
+      </p>
+    </div>
   );
 }
-
-export default TonightSky;

@@ -1,14 +1,10 @@
 import MoonFact from "./MoonFact";
 import TonightSky from "./TonightSky";
 import QuickView from "./QuickView";
+import type { MoonData } from "../utils/moonData";
 
 type DashboardProps = {
-  moon: {
-    phaseName: string;
-    emoji: string;
-    illumination: number;
-    age: number;
-  };
+  moon: MoonData;
 };
 
 function Dashboard({ moon }: DashboardProps) {
@@ -19,7 +15,7 @@ function Dashboard({ moon }: DashboardProps) {
       </div>
 
       <div className="feature-card">
-        <TonightSky />
+        <TonightSky moon={moon} />
       </div>
 
       <div className="feature-card">

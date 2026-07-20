@@ -1,38 +1,28 @@
-import InfoRow from "./InfoRow";
+import type { MoonData } from "../utils/moonData";
 
 type MoonFactProps = {
-  moon: {
-    phaseName: string;
-    emoji: string;
-    illumination: number;
-    age: number;
-  };
+  moon: MoonData;
 };
 
-function MoonFact({ moon }: MoonFactProps) {
+export default function MoonFact({ moon }: MoonFactProps) {
   return (
-    <>
-      <h3>🌙 Moon Facts</h3>
+    <div>
+      <h3>Moon Facts</h3>
 
-      <InfoRow
-        label="Phase"
-        value={`${moon.emoji} ${moon.phaseName}`}
-        description="The Moon's current phase in its 29.5-day lunar cycle."
-      />
+      <p>
+        The Moon is currently in its{" "}
+        <strong>{moon.phaseName}</strong> phase.
+      </p>
 
-      <InfoRow
-        label="Illumination"
-        value={`${moon.illumination}%`}
-        description="The percentage of the Moon's visible face currently lit by the Sun."
-      />
+      <p>
+        It is{" "}
+        <strong>{moon.illumination}% illuminated</strong>.
+      </p>
 
-      <InfoRow
-        label="Lunar Age"
-        value={`${moon.age.toFixed(1)} days`}
-        description="The number of days since the last New Moon."
-      />
-    </>
+      <p>
+        The lunar age is{" "}
+        <strong>{moon.age.toFixed(1)} days</strong>.
+      </p>
+    </div>
   );
 }
-
-export default MoonFact;

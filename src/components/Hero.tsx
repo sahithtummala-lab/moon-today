@@ -1,10 +1,7 @@
+import type { MoonData } from "../utils/moonData";
+
 type HeroProps = {
-  moon: {
-    phaseName: string;
-    emoji: string;
-    illumination: number;
-    age: number;
-  };
+  moon: MoonData;
 };
 
 export default function Hero({ moon }: HeroProps) {
@@ -50,7 +47,7 @@ export default function Hero({ moon }: HeroProps) {
           marginBottom: "1rem",
         }}
       >
-        Lunar age: {moon.age} days
+        Lunar age: {moon.age.toFixed(1)} days
       </p>
 
       <div
