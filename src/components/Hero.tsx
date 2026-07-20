@@ -4,6 +4,20 @@ type HeroProps = {
   moon: MoonData;
 };
 
+function getViewingMessage(moon: MoonData) {
+  const altitude = (moon.altitude * 180) / Math.PI;
+
+  if (altitude > 10 && moon.illumination > 15) {
+    return "⭐ Excellent Viewing Tonight";
+  }
+
+  if (moon.moonrise && moon.moonset) {
+    return "🌙 Moon is visible tonight";
+  }
+
+  return "🌑 Limited moon visibility tonight";
+}
+
 export default function Hero({ moon }: HeroProps) {
   return (
     <section
@@ -60,7 +74,7 @@ export default function Hero({ moon }: HeroProps) {
           fontWeight: 600,
         }}
       >
-        ⭐ Excellent Viewing Tonight
+        {getViewingMessage(moon)}
       </div>
     </section>
   );
