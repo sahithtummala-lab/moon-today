@@ -1,7 +1,7 @@
 import MoonFact from "./MoonFact";
 import TonightSky from "./TonightSky";
 import QuickView from "./QuickView";
-import type { MoonData } from "../utils/moonData";
+import type { MoonData } from "../types/moon";
 
 type DashboardProps = {
   moon: MoonData;

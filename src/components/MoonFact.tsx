@@ -1,4 +1,4 @@
-import type { MoonData } from "../utils/moonData";
+import type { MoonData } from "../types/moon";
 
 type MoonFactProps = {
   moon: MoonData;
