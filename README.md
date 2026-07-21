@@ -2,6 +2,8 @@
 
 A real-time lunar dashboard showing today's Moon phase, illumination, moonrise/moonset information, lunar facts, cultural moon names, festivals, and upcoming celestial events.
 
+<img width="2073" height="1199" alt="image" src="https://github.com/user-attachments/assets/5e7856a1-7066-4510-a350-601a1fe8fc47" />
+
 🔗 **Live Demo:** https://moon-today.vercel.app
 
 ## Features
