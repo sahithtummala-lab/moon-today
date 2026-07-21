@@ -11,22 +11,28 @@ export function getDailyLanguageInfo(
   languages: LanguageData[],
   date = new Date()
 ): DailyLanguageInfo {
-  const startDate = new Date("2026-07-20");
+  // Local midnight today
+  const today = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate()
+  );
 
-  const difference =
-    Math.floor(
-      (date.getTime() - startDate.getTime()) /
-        (1000 * 60 * 60 * 24)
-    );
+  // Local midnight on January 1 of this year
+  const startOfYear = new Date(date.getFullYear(), 0, 1);
+
+  const dayOfYear = Math.floor(
+    (today.getTime() - startOfYear.getTime()) /
+      (1000 * 60 * 60 * 24)
+  );
 
   const index =
-    ((difference % languages.length) + languages.length) %
+    ((dayOfYear % languages.length) + languages.length) %
     languages.length;
 
   return {
     language: languages[index],
-    tomorrow:
-      languages[(index + 1) % languages.length],
+    tomorrow: languages[(index + 1) % languages.length],
     dayNumber: index + 1,
     totalLanguages: languages.length,
   };

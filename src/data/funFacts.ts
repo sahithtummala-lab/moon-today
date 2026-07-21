@@ -32,13 +32,25 @@ export const funFacts: FunFact[] = [
 
 export function getDailyFunFact(): FunFact {
   const today = new Date();
-  const dayNumber = Math.floor(
-    Date.UTC(
-      today.getUTCFullYear(),
-      today.getUTCMonth(),
-      today.getUTCDate()
-    ) / 86400000
+
+  // Local midnight today
+  const localToday = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
   );
 
-  return funFacts[dayNumber % funFacts.length];
+  // Local midnight on January 1 of this year
+  const startOfYear = new Date(today.getFullYear(), 0, 1);
+
+  const dayOfYear = Math.floor(
+    (localToday.getTime() - startOfYear.getTime()) /
+      (1000 * 60 * 60 * 24)
+  );
+
+  const index =
+    ((dayOfYear % funFacts.length) + funFacts.length) %
+    funFacts.length;
+
+  return funFacts[index];
 }
