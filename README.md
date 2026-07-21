@@ -29,6 +29,7 @@ Install dependencies:
 
 ```bash
 npm install
+---
 
 ## Project Goals
 
