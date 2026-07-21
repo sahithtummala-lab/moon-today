@@ -18,6 +18,15 @@ A real-time lunar dashboard showing today's Moon phase, illumination, moonrise/m
 - 🌙 Lunar zodiac information
 - ☄️ Upcoming lunar and meteor events
 
+## Key Highlights
+
+- Took a product from concept to a live, publicly accessible web application
+- Designed a responsive, user-friendly interface focused on clarity and accessibility
+- Organized educational content into reusable, maintainable React components
+- Applied version control and iterative development using Git and GitHub
+- Deployed and maintained the application using Vercel
+
+
 ## Tech Stack
 
 - React
