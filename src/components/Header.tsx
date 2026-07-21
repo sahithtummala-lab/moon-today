@@ -1,32 +1,25 @@
 type HeaderProps = {
   date: string;
+  locationName: string;
 };
 
-export default function Header({ date }: HeaderProps) {
+export default function Header({
+  date,
+  locationName,
+}: HeaderProps) {
   return (
-    <header
-      style={{
-        textAlign: "center",
-        marginBottom: "2rem",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "3rem",
-          marginBottom: "0.5rem",
-        }}
-      >
-        🌙 Moon Today
-      </h1>
+    <header className="header">
+      <div>
+        <h1>🌙 Moon Today</h1>
 
-      <p
-        style={{
-          color: "#cbd5e1",
-          fontSize: "1.1rem",
-        }}
-      >
-        {date}
-      </p>
+        <p>
+          {date}
+        </p>
+
+        <p>
+          📍 {locationName}
+        </p>
+      </div>
     </header>
   );
 }

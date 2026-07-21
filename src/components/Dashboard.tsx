@@ -1,6 +1,7 @@
 import MoonFact from "./MoonFact";
 import TonightSky from "./TonightSky";
 import QuickView from "./QuickView";
+import TodaysLunarZodiac from "./TodaysLunarZodiac";
 import type { MoonData } from "../types/moon";
 
 type DashboardProps = {
@@ -11,7 +12,11 @@ function Dashboard({ moon }: DashboardProps) {
   return (
     <section className="feature-grid">
       <div className="feature-card">
-        <MoonFact moon={moon} />
+        <QuickView moon={moon} />
+      </div>
+
+      <div className="feature-card">
+        <TodaysLunarZodiac />
       </div>
 
       <div className="feature-card">
@@ -19,7 +24,7 @@ function Dashboard({ moon }: DashboardProps) {
       </div>
 
       <div className="feature-card">
-        <QuickView moon={moon} />
+        <MoonFact />
       </div>
     </section>
   );

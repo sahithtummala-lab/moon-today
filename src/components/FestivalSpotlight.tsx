@@ -1,28 +1,71 @@
 import "./FestivalSpotlight.css";
+import { getNextFestival } from "../utils/festivalRotation";
 
 export default function FestivalSpotlight() {
+  const festival = getNextFestival();
+
+  const formattedDate = new Date(festival.date).toLocaleDateString(
+    "en-US",
+    {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }
+  );
+
   return (
     <section className="festival-spotlight">
       <div className="festival-card">
-        <p className="festival-label">Festival Spotlight</p>
+        <div className="festival-icon">
+          {festival.emoji}
+        </div>
 
-        <h2>Ganesh Chaturthi</h2>
+        <p className="festival-label">
+          Festival Spotlight
+        </p>
+
+        <h2>
+          {festival.name}
+        </h2>
 
         <p className="festival-date">
-          Date: Coming soon
+          {formattedDate}
         </p>
 
-        <p>
-          Ganesh Chaturthi celebrates the birth of Lord Ganesha and follows the
-          lunar calendar. In many Hindu traditions, it is respectfully advised
-          to avoid looking at the Moon on this day due to a well-known story in
-          Hindu mythology. A future page will explore this tradition, its
-          history, and regional customs in greater detail.
+        <div className="festival-meta">
+          <span>
+            📍 {festival.region}
+          </span>
+
+          <span>
+            ✨ {festival.tradition}
+          </span>
+        </div>
+
+        <p className="festival-description">
+          {festival.description}
         </p>
 
-        <button className="festival-button">
-          Learn More
-        </button>
+        <div className="moon-highlight">
+          <h3>
+            🌙 Moon Connection
+          </h3>
+
+          <p>
+            {festival.moonConnection}
+          </p>
+        </div>
+
+        <a
+          className="festival-button"
+          href={`https://www.google.com/search?q=${encodeURIComponent(
+            festival.name
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn More →
+        </a>
       </div>
     </section>
   );

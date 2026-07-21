@@ -1,0 +1,58 @@
+.language-spotlight {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.language-card {
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.language-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.language-day {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.language-card h2 {
+  margin: 0.5rem 0;
+}
+
+.language-region {
+  opacity: 0.75;
+}
+
+.moon-word {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.moon-word h3 {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+}
+
+.language-cultural-note {
+  margin-top: 1.5rem;
+}
+
+.moon-song-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+}
+
+.tomorrow-language {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}

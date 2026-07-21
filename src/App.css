@@ -7,7 +7,7 @@
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, minmax(340px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
   align-items: stretch;
@@ -91,4 +91,21 @@
   .feature-grid {
     grid-template-columns: 1fr;
   }
+}
+/* ---------- Header ---------- */
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin: 0.35rem 0;
+  color: #cbd5e1;
 }

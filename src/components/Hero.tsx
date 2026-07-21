@@ -7,15 +7,23 @@ type HeroProps = {
 function getViewingMessage(moon: MoonData) {
   const altitude = (moon.altitude * 180) / Math.PI;
 
-  if (altitude > 10 && moon.illumination > 15) {
-    return "⭐ Excellent Viewing Tonight";
+  if (altitude > 30 && moon.illumination > 25) {
+    return "⭐ Great Moon viewing conditions";
   }
 
-  if (moon.moonrise && moon.moonset) {
-    return "🌙 Moon is visible tonight";
+  if (altitude > 10 && moon.illumination > 10) {
+    return "🌙 The Moon is visible in your sky";
   }
 
-  return "🌑 Limited moon visibility tonight";
+  if (altitude <= 10 && moon.moonrise) {
+    return "🌅 The Moon is low on the horizon";
+  }
+
+  if (!moon.moonrise && !moon.moonset) {
+    return "🌑 The Moon is below the horizon";
+  }
+
+  return "🌙 Limited Moon visibility right now";
 }
 
 export default function Hero({ moon }: HeroProps) {

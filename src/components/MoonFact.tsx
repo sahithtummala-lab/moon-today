@@ -1,28 +1,16 @@
-import type { MoonData } from "../types/moon";
+import { getDailyFunFact } from "../data/funFacts";
 
-type MoonFactProps = {
-  moon: MoonData;
-};
+export default function MoonFact() {
+  const funFact = getDailyFunFact();
 
-export default function MoonFact({ moon }: MoonFactProps) {
   return (
     <div>
-      <h3>Moon Facts</h3>
+      <h3>🌙 Moon Fact of the Day</h3>
 
-      <p>
-        The Moon is currently in its{" "}
-        <strong>{moon.phaseName}</strong> phase.
-      </p>
-
-      <p>
-        It is{" "}
-        <strong>{moon.illumination}% illuminated</strong>.
-      </p>
-
-      <p>
-        The lunar age is{" "}
-        <strong>{moon.age.toFixed(1)} days</strong>.
-      </p>
+      <div>
+        <h4>{funFact.title}</h4>
+        <p>{funFact.fact}</p>
+      </div>
     </div>
   );
 }

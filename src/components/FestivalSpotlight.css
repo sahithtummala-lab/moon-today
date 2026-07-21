@@ -1,61 +1,112 @@
 .festival-spotlight {
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 4rem 1.5rem;
+  margin: 3rem 0;
 }
 
 .festival-card {
-  max-width: 900px;
   width: 100%;
-
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px;
-
+  max-width: 850px;
   padding: 2.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
 
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+.festival-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
 }
 
 .festival-label {
-  color: #9ecbff;
   text-transform: uppercase;
-  letter-spacing: .15em;
-  font-size: .8rem;
-  margin-bottom: .8rem;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
 }
 
 .festival-card h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .festival-date {
-  color: #f2c94c;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
 }
 
-.festival-card p {
-  color: #d8d8d8;
-  line-height: 1.8;
+.festival-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.festival-meta span {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+}
+
+.festival-description {
+  max-width: 650px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.moon-highlight {
+  text-align: left;
+  padding: 1.25rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 2rem;
+}
+
+.moon-highlight h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.moon-highlight p {
+  line-height: 1.6;
+  margin: 0;
 }
 
 .festival-button {
-  margin-top: 2rem;
-  background: #7bb8ff;
-  color: #08111f;
-  border: none;
-  padding: 0.9rem 1.5rem;
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
   border-radius: 999px;
+  text-decoration: none;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  background: white;
+  color: black;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .festival-button:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .festival-card {
+    padding: 1.5rem;
+  }
+
+  .festival-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .festival-meta {
+    flex-direction: column;
+    align-items: center;
+  }
 }
